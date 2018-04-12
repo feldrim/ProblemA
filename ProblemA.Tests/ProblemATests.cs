@@ -11,7 +11,7 @@ namespace ProblemA.Tests
       {
          const int capacity = 1;
          const int numberOfStations = 2;
-         var measurements = new List<Measurement> { new Measurement(0, 1, 1), new Measurement(1, 0, 0) };
+         var measurements = new List<Measurement> {new Measurement(0, 1, 1), new Measurement(1, 0, 0)};
          var checker = new CapacityChecker(capacity, numberOfStations, measurements);
 
          Assert.IsTrue(checker.IsPossibble());
@@ -22,7 +22,7 @@ namespace ProblemA.Tests
       {
          const int capacity = 1;
          const int numberOfStations = 2;
-         var measurements = new List<Measurement> { new Measurement(1, 0, 0), new Measurement(0, 1, 0) };
+         var measurements = new List<Measurement> {new Measurement(1, 0, 0), new Measurement(0, 1, 0)};
          var checker = new CapacityChecker(capacity, numberOfStations, measurements);
 
          Assert.IsFalse(checker.IsPossibble());
@@ -33,7 +33,7 @@ namespace ProblemA.Tests
       {
          const int capacity = 1;
          const int numberOfStations = 2;
-         var measurements = new List<Measurement> { new Measurement(0, 1, 0), new Measurement(1, 0, 1) };
+         var measurements = new List<Measurement> {new Measurement(0, 1, 0), new Measurement(1, 0, 1)};
          var checker = new CapacityChecker(capacity, numberOfStations, measurements);
 
          Assert.IsFalse(checker.IsPossibble());
@@ -44,7 +44,7 @@ namespace ProblemA.Tests
       {
          const int capacity = 1;
          const int numberOfStations = 2;
-         var measurements = new List<Measurement> { new Measurement(0, 1, 1), new Measurement(0, 0, 0) };
+         var measurements = new List<Measurement> {new Measurement(0, 1, 1), new Measurement(0, 0, 0)};
          var checker = new CapacityChecker(capacity, numberOfStations, measurements);
 
          Assert.IsFalse(checker.IsPossibble());

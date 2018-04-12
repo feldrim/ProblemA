@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace ProblemA
 {
@@ -11,23 +10,16 @@ namespace ProblemA
 
       public CapacityChecker(int capacity, int numberOfStations, List<Measurement> measurements)
       {
-         if (measurements.Count() == numberOfStations)
-         {
+         if (measurements.Count == numberOfStations)
             _measurements = measurements;
-         }
          else
-         {
-            throw new ArgumentException("Number of stations are different than given measurements data.", nameof(numberOfStations));
-         }
+            throw new ArgumentException("Number of stations are different than given measurements data.",
+               nameof(numberOfStations));
 
          if (capacity > 0 && capacity < 1000000000)
-         {
             _capacity = capacity;
-         }
          else
-         {
             throw new ArgumentOutOfRangeException(nameof(capacity), "Capacity must be between 1 and 10^9");
-         }
       }
 
       public bool IsPossibble()
@@ -41,16 +33,9 @@ namespace ProblemA
 
             passengersOnTrain -= measurement.PeopleLeft;
             if (passengersOnTrain < 0) return false;
-
-            /**
-             * 1. Kapasiteden fazla yolcu inemez
-             * 2. Kapasiteden fazla yolcu binemez
-             * 3. Mevcut yolcu sayısından daha fazla yolcu inemez
-             * 4. Mevcut yolcu sayısı ve kapasite farkından daha fazla yolcu binemez
-             **/
          }
 
-         return true;
+         return passengersOnTrain <= 0;
       }
    }
 }
