@@ -2,15 +2,17 @@
 {
    public class Measurement
    {
-      private int _peopleLeft;
-      private int _peopleEntered;
-      private int _peopleStayed;
-
       public Measurement(int peopleLeft, int peopleEntered, int peopleStayed)
       {
-         _peopleLeft = peopleLeft;
-         _peopleEntered = peopleEntered;
-         _peopleStayed = peopleStayed;
+         PeopleLeft = peopleLeft;
+         PeopleEntered = peopleEntered;
+         PeopleStayed = peopleStayed;
       }
+
+      public int PeopleLeft { get; }
+
+      public int PeopleEntered { get; }
+
+      public int PeopleStayed { get; }
    }
 }
