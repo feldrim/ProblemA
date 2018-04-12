@@ -1,9 +1,13 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace ProblemA.Tests
 {
    [TestClass]
+   [SuppressMessage("ReSharper", "ArgumentsStyleLiteral")]
+   [SuppressMessage("ReSharper", "ArgumentsStyleNamedExpression")]
+   [SuppressMessage("ReSharper", "ArgumentsStyleOther")]
    public class ProblemATests
    {
       [TestMethod]
@@ -11,10 +15,10 @@ namespace ProblemA.Tests
       {
          const int capacity = 1;
          const int numberOfStations = 2;
-         var measurements = new List<Measurement> {new Measurement(0, 1, 1), new Measurement(1, 0, 0)};
-         var checker = new CapacityChecker(capacity, numberOfStations, measurements);
+         var measurements = new List<Measurement> {new Measurement(peopleLeft: 0, peopleEntered: 1, peopleStayed: 1), new Measurement(peopleLeft: 1, peopleEntered: 0, peopleStayed: 0)};
+         var checker = new CapacityChecker(capacity: capacity, numberOfStations: numberOfStations, measurements: measurements);
 
-         Assert.IsTrue(checker.IsPossibble());
+         Assert.IsTrue(condition: checker.IsPossibble());
       }
 
       [TestMethod]
@@ -22,10 +26,10 @@ namespace ProblemA.Tests
       {
          const int capacity = 1;
          const int numberOfStations = 2;
-         var measurements = new List<Measurement> {new Measurement(1, 0, 0), new Measurement(0, 1, 0)};
-         var checker = new CapacityChecker(capacity, numberOfStations, measurements);
+         var measurements = new List<Measurement> {new Measurement(peopleLeft: 1, peopleEntered: 0, peopleStayed: 0), new Measurement(peopleLeft: 0, peopleEntered: 1, peopleStayed: 0)};
+         var checker = new CapacityChecker(capacity: capacity, numberOfStations: numberOfStations, measurements: measurements);
 
-         Assert.IsFalse(checker.IsPossibble());
+         Assert.IsFalse(condition: checker.IsPossibble());
       }
 
       [TestMethod]
@@ -33,10 +37,10 @@ namespace ProblemA.Tests
       {
          const int capacity = 1;
          const int numberOfStations = 2;
-         var measurements = new List<Measurement> {new Measurement(0, 1, 0), new Measurement(1, 0, 1)};
-         var checker = new CapacityChecker(capacity, numberOfStations, measurements);
+         var measurements = new List<Measurement> {new Measurement(peopleLeft: 0, peopleEntered: 1, peopleStayed: 0), new Measurement(peopleLeft: 1, peopleEntered: 0, peopleStayed: 1)};
+         var checker = new CapacityChecker(capacity: capacity, numberOfStations: numberOfStations, measurements: measurements);
 
-         Assert.IsFalse(checker.IsPossibble());
+         Assert.IsFalse(condition: checker.IsPossibble());
       }
 
       [TestMethod]
@@ -44,10 +48,10 @@ namespace ProblemA.Tests
       {
          const int capacity = 1;
          const int numberOfStations = 2;
-         var measurements = new List<Measurement> {new Measurement(0, 1, 1), new Measurement(0, 0, 0)};
-         var checker = new CapacityChecker(capacity, numberOfStations, measurements);
+         var measurements = new List<Measurement> {new Measurement(peopleLeft: 0, peopleEntered: 1, peopleStayed: 1), new Measurement(peopleLeft: 0, peopleEntered: 0, peopleStayed: 0)};
+         var checker = new CapacityChecker(capacity: capacity, numberOfStations: numberOfStations, measurements: measurements);
 
-         Assert.IsFalse(checker.IsPossibble());
+         Assert.IsFalse(condition: checker.IsPossibble());
       }
    }
 }
