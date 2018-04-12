@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace ProblemA
 {
-   public partial class Program
+   public class Program
    {
       public static void Main(string[] args)
       {
