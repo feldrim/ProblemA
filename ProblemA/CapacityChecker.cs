@@ -32,11 +32,22 @@ namespace ProblemA
 
       public bool IsPossibble()
       {
+         var passengersOnTrain = 0;
 
          foreach (var measurement in _measurements)
          {
+            passengersOnTrain += measurement.PeopleEntered;
+            if (passengersOnTrain > _capacity) return false;
 
-            if (measurement.PeopleEntered > _capacity) return false;
+            passengersOnTrain -= measurement.PeopleLeft;
+            if (passengersOnTrain < 0) return false;
+
+            /**
+             * 1. Kapasiteden fazla yolcu inemez
+             * 2. Kapasiteden fazla yolcu binemez
+             * 3. Mevcut yolcu sayısından daha fazla yolcu inemez
+             * 4. Mevcut yolcu sayısı ve kapasite farkından daha fazla yolcu binemez
+             **/
          }
 
          return true;
