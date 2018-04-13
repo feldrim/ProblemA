@@ -7,11 +7,14 @@ namespace ProblemA
 {
    public class Program
    {
-      public static void Main(string[] args)
+      public static void Main()
       {
-         if (args == null || !args.Any()) return;
-         var path = args[0];
-         var content = File.ReadAllLines(path);
+
+
+         var content = new List<string>();
+         while ((var line = Console.ReadLine()) != null) {
+            content.Add(line);
+         } 
 
          var capacity = int.Parse(content[0].Split(' ')[0]);
          var numberOfStations = int.Parse(content[0].Split(' ')[1]);
