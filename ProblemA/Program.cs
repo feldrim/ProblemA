@@ -21,7 +21,7 @@ namespace ProblemA
          var numberOfStations = int.Parse(content[0].Split(' ')[1]);
          var measurements = new List<Measurement>();
 
-         for (var i = 1; i < content.Length; i++)
+         for (var i = 1; i < content.Count(); i++)
          {
             var peopleLeft = int.Parse(content[i].Split(' ')[0]);
             var peopleEntered = int.Parse(content[i].Split(' ')[1]);
