@@ -12,7 +12,8 @@ namespace ProblemA
 
 
          var content = new List<string>();
-         while ((var line = Console.ReadLine()) != null) {
+         string line; 
+         while ((line = Console.ReadLine()) != null) {
             content.Add(line);
          } 
 
